@@ -1,6 +1,6 @@
 'use-strict';
 
-import { Countdown } from "./countdown.js";
+import { Countdown } from "../countdown.js";
 /* Functions */
 const getid = (id) => document.getElementById(id);
 
@@ -8,14 +8,14 @@ const verifyInitialValue = () => new Promise((resolve, reject) => {
    let initVal = parseInt(initValue.value);
    // When parse the value, if is not a number return NaN, and is taken like *false*
    if(initVal) resolve(initVal);
-   else reject('error');
+   else reject(initVal);
 });
 
 const runApp = () => {
    verifyInitialValue()
-   .then(initVal => {
+   .then(res => {
+      let countdown =  new Countdown(timeTarget, res, useSeconds.checked);
       countdown.stop() // to prevent that the timer runs when has changes
-      let countdown =  new Countdown(timeTarget, initVal, useSeconds.checked);
       playPause.addEventListener('click', () => {
          if(running) {
            countdown.stop();
@@ -27,7 +27,10 @@ const runApp = () => {
       });
       reload.addEventListener('click', countdown.reload);
    })
-   .catch(() => alert('You can only set numbers!'));
+   .catch(err => {
+      console.log(err);
+      // alert('You can only set numbers!');
+   });
 }
 
 
