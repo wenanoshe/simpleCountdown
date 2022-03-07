@@ -8,38 +8,38 @@
    <link rel="stylesheet" href="demo.css">
    <title>Document</title>
 </head>
-<body>
+<body class="flex-center">
    <div class="contain">
-      <h1 class="title">Simple Simple CountDown</h1>
+      <h1 class="title">Simple CountDown</h1>
       <p class="description">All that i need to tell you is that is a simple countdown :v</p>
 
-      <div class="countDownBox">
+      <div class="countDownBox flex-center">
          <span id="time"></span>
          
          <div class="controls">
-            <button class="control" id="playPause">
+            <button class="control btn" id="playPause">
                <span>Play/Pause</span>
                <i class="fi fi-rs-play"></i>
                <i class="fi fi-rs-pause"></i>
             </button>
-            <button class="control" id="reload">
+            <button class="control btn" id="reload">
                <span>Reload</span>
                <i class="fi fi-rs-rotate-right"></i>
             </button>
          </div>
 
-         <form id="form">
-            <div class="form__setInitialValue">
+         <form id="form" class="flex-center">
+            <div class="form__ask flex-center">
                <label for="initValue">Set Initial Value</label>
                <input type="number" id="initValue" placeholder="Initial value" value="1" />
             </div>
 
-            <div class="form__format">
-               <label for="useMiliseconds">Set Initial Value</label>
+            <div class="form__ask flex-center">
+               <label for="useMiliseconds">Use Miliseconds</label>
                <input type="checkbox" id="useMiliseconds">
             </div>
             
-            <button class="apply">Apply</button>
+            <button class="btn" id="apply">Apply</button>
          </form>
    </div>
    </div>
