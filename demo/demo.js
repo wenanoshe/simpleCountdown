@@ -3,9 +3,6 @@
 import { Countdown } from "./countdown.js";
 /* Functions */
 const getid = (id) => document.getElementById(id);
-const query = (selector) => document.querySelector(selector);
-const queryAll = (selector) => [...document.querySelectorAll(selector)];
-
 
 const verifyInitialValue = () => new Promise((resolve, reject) => {
    let initVal = parseInt(initValue.value);
