@@ -17,6 +17,7 @@ const verifyInitialValue = () => new Promise((resolve, reject) => {
 const runApp = () => {
    verifyInitialValue()
    .then(initVal => {
+      countdown.stop() // to prevent that the timer runs when has changes
       let countdown =  new Countdown(timeTarget, initVal, useSeconds.checked);
       playPause.addEventListener('click', () => {
          if(running) {
